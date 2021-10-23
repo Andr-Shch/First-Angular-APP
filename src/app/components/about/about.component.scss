@@ -1,0 +1,12 @@
+.about{
+  margin: 0 auto ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(180, 179, 177);
+  max-width: 1200px;
+  &-title{
+    margin: 20px auto;
+  }
+}

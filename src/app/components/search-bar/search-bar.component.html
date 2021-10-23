@@ -1,13 +1,21 @@
-
 <div class="search-container">
-    <form class="searchBar">
-        <span clas="logo" routerLink="/">MVDB</span>
+    <div class="search-wrapper">
+    <form class="search-form"  #f="ngForm" (ngSubmit)="onSubmit(f)"  > 
+        <span class="search-logo"  routerLink="/">MVDB</span>
+        <!-- <img class="search-MVDBref" src="../../../assets/images/tmdb_logo.f15b6632.svg" alt="mvdb" > -->
         <input 
         class="search-input"
         name='search'
         ngModel
-        placeholder="Search mooovies"
+        placeholder="Search 800,000+ movies and TV-shows"
         />
-        <button class="search">Search</button>
+        <button class="search-button">Search</button>
+       
     </form>
+    <nav class="navi">
+        <a class="navi-link" routerLink="">Home</a>
+        <a class="navi-link" routerLink="/about">About</a>
+       
+    </nav>
+  </div>
 </div> 
