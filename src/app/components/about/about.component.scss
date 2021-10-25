@@ -4,9 +4,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(180, 179, 177);
+  color: rgb(12, 12, 12);
   max-width: 1200px;
   &-title{
     margin: 20px auto;
+    color: #0177D2;
+    font-weight: 700;
+    font-size: 30px;
   }
 }
