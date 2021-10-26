@@ -1,8 +1,13 @@
+
+
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { request } from 'http';
+
 import { Observable } from 'rxjs';
-import { POPULAR_BASE_URL } from '../environments/environmen';
+import { environment, POPULAR_BASE_URL, SEARCH_BASE_URL, SORT_URL } from '../environments/environmen';
+
+
+//import { POPULAR_BASE_URL } from '../environments/environmen';
 import { APIResponse, IMovie } from '../models/models';
 
 @Injectable({
@@ -14,21 +19,19 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
    fetchMovies(
-     ordering:string,
-     search?:string
+     // search?:string,
+      sort?:string
    ):Observable<APIResponse<IMovie>>{
-     
-     let params = new HttpParams().set('ordering', ordering)
-     
-     if(search){
-      params = new HttpParams().set('ordering', ordering).set('search', search)
-     }
-     
-
-     return this.http.get<APIResponse<IMovie>>(`${POPULAR_BASE_URL}1`, {
-       params:params
-     })
+    if (sort){
+       return this.http.get<APIResponse<IMovie>>(`${SORT_URL}${sort}&page=${1}`)
+    }
+     return this.http.get<APIResponse<IMovie>>(`${POPULAR_BASE_URL}&page=${1}`)
    }
-
-  
+   
+    searchMovie(param:string):Observable<APIResponse<IMovie>>{
+      
+    
+      return this.http.get<APIResponse<IMovie>>(SEARCH_BASE_URL+param)
+    }
+   
 }

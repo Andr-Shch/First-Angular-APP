@@ -16,7 +16,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
     req = req.clone({
       setHeaders: {
         'Content-Type':  'application/json',
-        'Authorization': `Bearer ${environment.API_KEY}`
+        'Authorization': `Bearer ${environment.API_KEY4}`
       }
       
     });

@@ -7,170 +7,38 @@
       <mat-select 
         panelClass="sort-select"
         [(ngModel)]="sort"
-       
+        (selectionChange)="searchGames(sort)"
       >
-        <mat-option value="name">in theatres</mat-option>
-        <mat-option value="popularity.desc">most popular</mat-option>
-        <mat-option value="-added">highest rated</mat-option>
+        <mat-option value="revenue.desc">Revenue</mat-option>
+        <mat-option value="release_date.desc">Newest</mat-option>
+        <mat-option value="vote_count.desc">Highest rated</mat-option>
       
       </mat-select>
     </mat-form-field>
   </div> 
 
   <div class="movies-wrapper">
-
-    <div class="movie">
+    <ng-container *ngFor="let movie of movies">
+    <div class="movie" (click)=openGameDetails(movie.id)>
       <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
+        <img 
+        *ngIf="movie.poster_path"                       
+        src="{{basePoster + movie.poster_path }}"     
+         alt="poster" >
+         <img 
+        *ngIf="!movie.poster_path"
+         src="../../../assets/images/no_image.jpg"  
+         alt="poster" >
       </div>
       <div class="movie-name">
-        Free gay
+        {{movie.title}}
       </div>
       <div class="movie-relase">
-        Sep 28, 2018
+        <!-- date pipe -->
+        {{ movie.release_date |  date: 'dd MMM. yyyy'}}              
       </div>
     </div>
-
-    
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
-
-
-    <div class="movie">
-      <div class="movie-poster">
-        <img src="http://image.tmdb.org/t/p/w780/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg " alt="poster" >
-      </div>
-      <div class="movie-name">
-        Free gay
-      </div>
-      <div class="movie-relase">
-        Sep 28, 2018
-      </div>
-    </div>
+  </ng-container>
+   
 
   </div>

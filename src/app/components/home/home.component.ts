@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { environment } from 'src/app/environments/environmen';
+import { APIResponse, IMovie } from 'src/app/models/models';
+import { HttpService } from 'src/app/services/http.service';
 
 interface Category {
   value: string;
@@ -18,17 +22,46 @@ interface Food {
 })
 export class HomeComponent implements OnInit {
   
-  public sort! : string;
+  public sort!: string;
+  public movies!: IMovie[];
+  public basePoster = environment.IMG_URL_POSTER 
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-  constructor() { }
+ 
+  constructor(
+    private httpservice: HttpService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+  ) { }
    
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params: Params)=>{
+      if (params['search']) {
+      this.searchGames (params['search']);
+      console.log(params['search']);
+      
+      } else {
+        this.searchGames('');
+      }
+    })
+   
+    
   }
 
+  searchGames( search?: string): void {
+   this.httpservice
+      .fetchMovies(search)
+      .subscribe((movieList: APIResponse<IMovie>) => {
+        console.log(movieList);
+        
+        this.movies = movieList.results;
+        
+      });
+
+}
+  
+   openGameDetails(id: string): void {
+   this.router.navigate(['film', id]);
+}
+   
 }

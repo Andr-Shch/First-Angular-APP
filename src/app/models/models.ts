@@ -3,7 +3,8 @@ export interface IMovie {
     vote_average: number;
     title: string;
     release_date: string,
-    poster_path:string
+    poster_path:string,
+    backdrop_path:string
 }
 
 export interface APIResponse<T>{

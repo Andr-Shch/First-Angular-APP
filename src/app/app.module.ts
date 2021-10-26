@@ -18,6 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 
@@ -26,7 +28,9 @@ import { AboutComponent } from './components/about/about.component';
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    MovieListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
