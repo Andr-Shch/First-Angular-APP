@@ -1,1 +1,26 @@
-<p>movie-list works!</p>
+
+ <div class="movies-wrapper">
+ 
+<ng-container *ngFor="let movie of movies">
+    <div class="movie" (click)=sendTermToPerent(movie.id)>
+      <div class="movie-poster">
+        <img 
+        *ngIf="movie.poster_path"                       
+        src="{{basePoster + movie.poster_path }}"     
+         alt="poster" >
+         <img 
+        *ngIf="!movie.poster_path"
+         src="../../../assets/images/no_image.jpg"  
+         alt="poster" >
+      </div>
+      <div class="movie-name">
+        {{movie.title}}
+      </div>
+      <div class="movie-relase">
+        <!-- date pipe -->
+        {{ movie.release_date |  date: 'dd MMM. yyyy'}}              
+      </div>
+    </div>
+  </ng-container>
+     
+</div>

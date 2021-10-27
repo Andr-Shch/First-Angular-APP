@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
   
   public sort!: string;
   public movies!: IMovie[];
-  public basePoster = environment.IMG_URL_POSTER 
   private routeSub!: Subscription;
   private movieSub!: Subscription;
   public searchTerm!:string;
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private httpservice: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
+    private router:Router
     
   ) { }
    
@@ -59,6 +58,8 @@ export class HomeComponent implements OnInit {
       .fetchMovies( sort)
       .subscribe((movieList: APIResponse<IMovie>) => {
         this.movies = movieList.results;
+        console.log(movieList);
+        
       });
   }
 
@@ -70,9 +71,12 @@ export class HomeComponent implements OnInit {
       });
 }
   
-   openGameDetails(id: string): void {
-   this.router.navigate(['film', id]);
+openGameDetails($id: string): void {
+  this.router.navigate(['film', $id]);
 }
+
+
+
    
  ngOnDestroy(): void {
  if (this.movieSub) {
