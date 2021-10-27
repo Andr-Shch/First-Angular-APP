@@ -7,7 +7,7 @@
       <mat-select 
         panelClass="sort-select"
         [(ngModel)]="sort"
-        (selectionChange)="searchGames(sort)"
+        (selectionChange)="getListOfMovies(sort)"
       >
         <mat-option value="revenue.desc">Revenue</mat-option>
         <mat-option value="release_date.desc">Newest</mat-option>
@@ -16,7 +16,7 @@
       </mat-select>
     </mat-form-field>
   </div> 
-
+  <div class="result" *ngIf="searchTerm">Search results:"{{searchTerm}}" </div>
   <div class="movies-wrapper">
     <ng-container *ngFor="let movie of movies">
     <div class="movie" (click)=openGameDetails(movie.id)>

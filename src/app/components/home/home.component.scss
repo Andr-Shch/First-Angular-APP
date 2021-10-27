@@ -3,7 +3,12 @@
     margin: 20px auto;
     padding-left: 20px;
   }
-  
+  .result{
+    text-align: center;
+    color: #0177D2;
+    font-size: 18px;
+    font-weight: 600;
+  }
   .movies-wrapper{
     display: grid;
      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

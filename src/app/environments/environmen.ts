@@ -7,9 +7,7 @@
     IMG_URL_BACKDROP: "https://image.tmdb.org/t/p/w1280"
   };
   
-  const SEARCH_BASE_URL = `${environment.BASE_URL}search/movie&language=en-US&query=`;
-
-
+  const SEARCH_BASE_URL = `${environment.BASE_URL}search/movie?api_key=${environment.API_KEY3}&language=en-US&query=`;
   const POPULAR_BASE_URL =`${environment.BASE_URL}movie/popular?api_key=${environment.API_KEY3}&language=en-US`
   const SORT_URL = `${environment.BASE_URL}discover/movie?api_key=${environment.API_KEY3}&language=en-US&sort_by=`//      revenue.desc&page=`
   

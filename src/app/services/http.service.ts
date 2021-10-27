@@ -12,26 +12,25 @@ export class HttpService {
  
 
   constructor(private http: HttpClient) { }
-
+  
+  // get list and sort 
    fetchMovies(
-     // search?:string,
+     
       sort?:string
    ):Observable<APIResponse<IMovie>>{
+     
     if (sort){
        return this.http.get<APIResponse<IMovie>>(`${SORT_URL}${sort}&page=${1}`)
     }
      return this.http.get<APIResponse<IMovie>>(`${POPULAR_BASE_URL}&page=${1}`)
    }
-   
-    searchMovie(param:string):Observable<APIResponse<IMovie>>{
-      
-    
-      return this.http.get<APIResponse<IMovie>>(SEARCH_BASE_URL+param)
+
+     // searching movies by term
+     searchMovie(term?:string):Observable<APIResponse<IMovie>>{
+        return this.http.get<APIResponse<IMovie>>(SEARCH_BASE_URL+term +"&page=1")
     }
 
     getDetails(id:string){
-          
-
       return this.http.get<IMovie>(`${environment.BASE_URL}movie/${id}`)
     }
    
