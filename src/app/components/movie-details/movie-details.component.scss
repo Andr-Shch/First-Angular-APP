@@ -15,18 +15,26 @@
     }
   &-content{
     display: flex;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     background: rgb(0, 0, 0, 0.7);
     border-radius: 20px;
   }
   &-poster{
       height: 60vh;
+      border-radius: 20px 0 0 20px;
   }
   &-text{
     width: 100%;
     padding: 10px 50px;
     color:white;
     overflow: hidden;
+
+  }
+  .plot{
+    margin-bottom: 1px;
+  }
+  .rating{
+    display: flex;
   }
 }

@@ -5,6 +5,13 @@ export interface IMovie {
     release_date: string,
     poster_path:string,
     backdrop_path:string
+    overview:string,
+    genres: List[]
+}
+
+interface List {
+    id:string,
+    name:string
 }
 
 export interface APIResponse<T>{

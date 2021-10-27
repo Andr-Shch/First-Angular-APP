@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params)=>{
       if (params['search']) {
       this.searchGames (params['search']);
-      console.log(params['search']);
+   
       
       } else {
         this.searchGames('');
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
    this.httpservice
       .fetchMovies(search)
       .subscribe((movieList: APIResponse<IMovie>) => {
-        console.log(movieList);
+  
         
         this.movies = movieList.results;
         
