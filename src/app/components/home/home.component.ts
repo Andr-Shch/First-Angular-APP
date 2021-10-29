@@ -5,16 +5,7 @@ import { environment } from 'src/app/environments/environmen';
 import { APIResponse, IMovie } from 'src/app/models/models';
 import { HttpService } from 'src/app/services/http.service';
 
-interface Category {
-  value: string;
-  viewValue: string;
-}
 
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-home',

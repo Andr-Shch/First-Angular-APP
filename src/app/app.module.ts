@@ -1,14 +1,13 @@
 import { HttpErrorsInterceptor } from './interceptors/http-error.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-header.interceptor';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StorageService } from './storage.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -39,6 +38,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     GaugeModule.forRoot(),
    MatFormFieldModule,
     MatSelectModule,
