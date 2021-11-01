@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       
       } else {
         this.getListOfMovies();
-        console.log('empty');
+      
         
       }
     })
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
       .fetchMovies( sort)
       .subscribe((movieList: APIResponse<IMovie>) => {
         this.movies = movieList.results;
-        console.log(movieList);
+      
         
       });
   }

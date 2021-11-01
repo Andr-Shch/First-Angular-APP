@@ -1,27 +1,13 @@
-# AngApp
+##Movie DB. Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+**Here I made an app of movie DB API request.**
+Try the App: [bd.netlify.app](https://mystifying-colden-07d4bc.netlify.app)
+<a href="https://mystifying-colden-07d4bc.netlify.app" target="blank">
+<img src="src/assets/images/main.png" />
+</a>
 
-## Development server
+**- There is a ```search-component``` with navigation between two pages ```Home``` and ```About```. Also ```search-component``` has reactive form for searching**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**- Home-component has template-driven form for sorting movies and child component ```movie-list``` wich send and recive data**
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**- In ```movie-list``` used pipe to convert time to another format. By clicking on movie from list open ``movie-detail`` component**

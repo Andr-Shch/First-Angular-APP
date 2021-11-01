@@ -10,7 +10,8 @@ import { MyValidators } from 'src/app/my-validators/my-validators';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  // inputValue:string = ''
+  
+  //
   form!:FormGroup
   constructor(private router: Router) { 
    
@@ -33,12 +34,7 @@ export class SearchBarComponent implements OnInit {
     this.router.navigate(['search', this.form.value.input])
     this.form.reset()
   }
-  // if(f.value.search===''){return}
-  // else{
-  // this.router.navigate(['search', f.value.search])
-  // console.log(this.router.navigate);
-  // f.reset()
-  // }
+
  }
 
 

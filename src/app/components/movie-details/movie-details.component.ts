@@ -35,7 +35,7 @@ export class MovieDetailsComponent implements OnInit {
       .getDetails(id)
       .subscribe((movie: IMovie) => {
   
-        console.log(movie);
+      
         this.movie = movie
         this.backdrop = environment.IMG_URL_BACKDROP +movie.backdrop_path
         this.poster = environment.IMG_URL_POSTER + movie.poster_path

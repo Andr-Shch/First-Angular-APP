@@ -11,7 +11,7 @@
         <button type="submit" class="search-button" [disabled]="form.invalid">Search</button>
         <!-- <div *ngIf="form.get('input').invalid">  </div> -->
     </form>
-    <div class="starError" *ngIf="form.get('input').errors.NoStarWars">No Star Wars</div>
+    <div class="starError" *ngIf="form.get('input').errors?.NoStarWars">No Star Wars</div>
     <nav class="navi">
         <a class="navi-link" routerLink="">Home</a>
         <a class="navi-link" routerLink="/about">About</a>

@@ -6,14 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngA111pp+';
-  jsonValue = {
-    a: 'Hello',
-    b: 'Pipe'
-  }
-
-  hendleEvrntor() {
-    alert('keydown')
-    
-  }
+   
 }

@@ -31,7 +31,12 @@
     &.ng-invalid.ng-touched{
         border: 2px solid #a94442; /* red */
         border-radius: 5px 0 0 5px;
+        
     }   
+    &.ng-valid{
+        border: 2px solid rgba(156, 154, 154, 0);
+        border-radius: 5px 0 0 5px;
+    }
    }
     
    &-button{
