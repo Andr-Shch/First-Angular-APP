@@ -3,7 +3,7 @@
 **Here I made an app of movie DB API request.**
 Try the App: [bd.netlify.app](https://mystifying-colden-07d4bc.netlify.app)
 <a href="https://mystifying-colden-07d4bc.netlify.app" target="blank">
-<img src="src/assets/images/main.png" />
+<img src="src/assets/images/main.PNG" />
 </a>
 
 **- There is a ```search-component``` with navigation between two pages ```Home``` and ```About```. Also ```search-component``` has reactive form for searching**
